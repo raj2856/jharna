@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home – Raj ♥ Jharna</title>
+  <meta name="description" content="The home of our memory book — Raj & Jharna's love story." />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/secret.css" />
+</head>
+<body>
+  <div class="floating-hearts"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/rj-logo.png" alt="RJ Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">🏠 Home</a></li>
+      <li><a href="story.html">📖 Story</a></li>
+      <li><a href="gallery.html">🖼️ Gallery</a></li>
+      <li><a href="timeline.html">📅 Timeline</a></li>
+      <li><a href="quiz.html">💡 Quiz</a></li>
+      <li><a href="letters.html">✉️ Letters</a></li>
+      <li><a href="guestbook.html">📝 Guestbook</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="map.html">📍 Map</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">🏠 Home</a>
+    <a href="story.html">📖 Our Story</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="timeline.html">📅 Timeline</a>
+    <a href="quiz.html">💡 Quiz</a>
+    <a href="letters.html">✉️ Letters</a>
+    <a href="guestbook.html">📝 Guestbook</a>
+    <a href="music.html">🎵 Music</a>
+    <a href="map.html">📍 Map</a>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-logo fade-in">Our Private Little World 🌸</p>
+        <h1 class="hero-title fade-in">
+          Raj<span class="hero-amp"> &amp; </span>Jharna
+        </h1>
+        <span class="hero-heart fade-in">💕</span>
+        <p class="hero-subtitle fade-in">
+          Some stories begin in unexpected ways.<br>
+          Ours started with a simple chat and slowly turned into something beautiful.
+        </p>
+        <p class="hero-quote fade-in">
+          Every message, every laugh, every moment<br>became a small memory worth keeping.
+        </p>
+        <div class="hero-cta fade-in">
+          <a href="story.html" class="btn-primary">📖 Read Our Story</a>
+          <a href="gallery.html" class="btn-primary" style="background:linear-gradient(135deg,#fad0c4,#ff8fab)">🖼️ See Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WIDGETS -->
+    <section class="widgets">
+      <!-- Days Counter -->
+      <div class="widget-card fade-in">
+        <span class="widget-icon">💕</span>
+        <span class="widget-label">Days Since We Started Talking</span>
+        <span class="widget-value" id="days-counter">0</span>
+        <span class="widget-sublabel">days together</span>
+        <div class="heart-divider" style="margin-top:0.8rem">♥ ♥ ♥</div>
+        <p style="font-size:0.8rem;color:#c09aaa;margin-top:0.5rem;font-style:italic;">Since March 5, 2026</p>
+      </div>
+
+      <!-- Love Meter -->
+      <div class="widget-card fade-in">
+        <span class="widget-icon">❤️‍🔥</span>
+        <span class="widget-label">Love Compatibility</span>
+        <div style="margin:0.5rem 0">
+          <span style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#5a2535;">
+            <span class="jharna-secret-trigger" style="cursor:pointer;transition:color 0.3s" title="Click me 5 times...">Raj</span>
+            ❤️
+            <span class="jharna-secret-trigger" style="cursor:pointer;transition:color 0.3s" title="Click me 5 times...">Jharna</span>
+          </span>
+        </div>
+        <span class="love-percent">100%</span>
+        <div class="love-meter-bar-wrap">
+          <div class="love-meter-bar" id="love-bar"></div>
+        </div>
+        <span class="widget-sublabel">Perfect Match 💯</span>
+      </div>
+    </section>
+
+    <!-- PAGE NAVIGATION TILES -->
+    <section class="pages-grid fade-in">
+      <h2>Explore Our World</h2>
+      <p class="subtitle">Every page holds a piece of us 🌸</p>
+      <div class="grid-3">
+        <a class="page-tile" href="story.html">
+          <span class="tile-icon">📖</span>
+          <span class="tile-name">Our Story</span>
+          <span class="tile-desc">How it all began</span>
+        </a>
+        <a class="page-tile" href="gallery.html">
+          <span class="tile-icon">🖼️</span>
+          <span class="tile-name">Gallery</span>
+          <span class="tile-desc">Photos & memories</span>
+        </a>
+        <a class="page-tile" href="timeline.html">
+          <span class="tile-icon">📅</span>
+          <span class="tile-name">Timeline</span>
+          <span class="tile-desc">Important moments</span>
+        </a>
+        <a class="page-tile" href="quiz.html">
+          <span class="tile-icon">💡</span>
+          <span class="tile-name">Quiz</span>
+          <span class="tile-desc">How well do you know?</span>
+        </a>
+        <a class="page-tile" href="letters.html">
+          <span class="tile-icon">✉️</span>
+          <span class="tile-name">Love Letters</span>
+          <span class="tile-desc">Private messages</span>
+        </a>
+        <a class="page-tile" href="guestbook.html">
+          <span class="tile-icon">📝</span>
+          <span class="tile-name">Guestbook</span>
+          <span class="tile-desc">Leave a message</span>
+        </a>
+        <a class="page-tile" href="music.html">
+          <span class="tile-icon">🎵</span>
+          <span class="tile-name">Music</span>
+          <span class="tile-desc">Our soundtrack</span>
+        </a>
+        <a class="page-tile" href="map.html">
+          <span class="tile-icon">📍</span>
+          <span class="tile-name">Our Map</span>
+          <span class="tile-desc">Where we are</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      Made with <span>♥</span> for Raj & Jharna &nbsp;·&nbsp; A private little corner of the internet 🌸
+    </footer>
+  </div>
+
+  <!-- SECRET MODAL -->
+  <div id="secret-modal" class="secret-modal">
+    <div class="secret-modal-inner">
+      <button id="secret-close" class="secret-close">✕</button>
+      <div class="secret-icon">🔐</div>
+      <h2 class="secret-title">You found the secret!</h2>
+      <div id="secret-pw-form">
+        <p style="color:#a07080;font-size:0.9rem;margin-bottom:1.2rem;">Enter the special password to see the hidden message</p>
+        <div class="pw-input-wrap" style="margin-bottom:0.8rem">
+          <span class="pw-input-icon">💫</span>
+          <input type="password" id="secret-pw-input" placeholder="Secret password..." />
+        </div>
+        <button class="pw-btn" id="secret-pw-btn" style="font-size:0.9rem;padding:0.75rem 1.5rem;">Reveal ✨</button>
+        <div class="pw-error" id="secret-pw-err">Not quite right! Try again 💕</div>
+      </div>
+      <div id="secret-content" class="secret-content">
+        <p class="secret-msg">💌 Jharna, this website was built with all the love I have for you. Every pixel here holds a memory of us, and I hope this little world makes you smile every time you visit it. You mean everything to me.</p>
+        <p style="color:#ff8fab;font-family:'Dancing Script',cursive;font-size:1.4rem;margin-top:1rem;">— With love, Raj 💕</p>
+        <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(255,154,158,0.1);border-radius:16px;border:1px dashed rgba(255,154,158,0.4)">
+          <p style="color:#a07080;font-size:0.85rem;margin-bottom:0.5rem">🎤 Voice note placeholder</p>
+          <p style="color:#c09aaa;font-size:0.78rem;font-style:italic">Add your voice note file to assets/music/ and update the src here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/secret.js"></script>
+</body>
+</html>

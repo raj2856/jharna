@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story – Raj ♥ Jharna</title>
+  <meta name="description" content="How Raj and Jharna's beautiful story began." />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/story.css" />
+  <link rel="stylesheet" href="css/secret.css" />
+</head>
+<body>
+  <div class="floating-hearts"></div>
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/rj-logo.png" alt="RJ Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="story.html" class="active">📖 Story</a></li>
+      <li><a href="gallery.html">🖼️ Gallery</a></li>
+      <li><a href="timeline.html">📅 Timeline</a></li>
+      <li><a href="quiz.html">💡 Quiz</a></li>
+      <li><a href="letters.html">✉️ Letters</a></li>
+      <li><a href="guestbook.html">📝 Guestbook</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="map.html">📍 Map</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">🏠 Home</a><a href="story.html">📖 Our Story</a>
+    <a href="gallery.html">🖼️ Gallery</a><a href="timeline.html">📅 Timeline</a>
+    <a href="quiz.html">💡 Quiz</a><a href="letters.html">✉️ Letters</a>
+    <a href="guestbook.html">📝 Guestbook</a><a href="music.html">🎵 Music</a>
+    <a href="map.html">📍 Map</a>
+  </div>
+
+  <div class="page-wrapper">
+    <section class="story-hero">
+      <div>
+        <h1 class="story-hero-title fade-in">Our Story</h1>
+        <p class="story-hero-sub fade-in">A simple beginning. A beautiful journey. 🌸</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="story-block fade-in">
+        <div class="story-photo-card">
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80" alt="Our beginning" />
+          <div class="story-photo-caption">Where it all began ✨</div>
+        </div>
+        <p class="story-para">
+          Our story started in a random way. We first crossed paths on an app called 
+          <span class="story-em">Kiss Kiss</span>.
+        </p>
+        <p class="story-para">
+          At first, we didn't really talk much. Just small messages here and there — the kind you send without expecting anything in return.
+        </p>
+        <p class="story-para">
+          But somehow we met again there. Maybe it was coincidence. Maybe it was a small, beautiful plan made by the universe.
+        </p>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="story-divider">♥ ♥ ♥</div>
+
+      <div class="story-block fade-in">
+        <p class="story-para">
+          Slowly, the conversations became longer. What started as short replies turned into long exchanges — full of laughter, honesty, and warmth.
+        </p>
+        <p class="story-para">
+          The laughs became real. The silences became comfortable. And the connection became something neither of us could quite explain.
+        </p>
+      </div>
+
+      <div class="story-quote fade-in">
+        "Sometimes the best stories begin when you least expect them — in the most unexpected places, with the most unexpected people."
+      </div>
+
+      <div class="story-block fade-in">
+        <div class="story-photo-card" style="float:left; margin:0 2.5rem 2rem 0;">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=400&q=80" alt="Connection" />
+          <div class="story-photo-caption">A connection that grew 💕</div>
+        </div>
+        <p class="story-para">
+          And here we are — a story still being written, one message, one laugh, and one beautiful moment at a time.
+        </p>
+        <p class="story-para">
+          Every small thing — a good morning text, a random meme, a voice note — all of it adds up to something
+          <span class="story-em">worth keeping forever</span>.
+        </p>
+        <div class="clearfix"></div>
+      </div>
+
+      <div style="text-align:center; margin-top:3rem">
+        <a href="timeline.html" class="btn-primary">📅 See Our Timeline</a>
+      </div>
+    </section>
+
+    <footer>Made with <span>♥</span> for Raj & Jharna 🌸</footer>
+  </div>
+
+  <div id="secret-modal" class="secret-modal">
+    <div class="secret-modal-inner">
+      <button id="secret-close" class="secret-close">✕</button>
+      <div class="secret-icon">🔐</div>
+      <h2 class="secret-title">You found the secret!</h2>
+      <div id="secret-pw-form">
+        <p style="color:#a07080;font-size:0.9rem;margin-bottom:1.2rem;">Enter the special password</p>
+        <div class="pw-input-wrap" style="margin-bottom:0.8rem">
+          <span class="pw-input-icon">💫</span>
+          <input type="password" id="secret-pw-input" placeholder="Secret password..." />
+        </div>
+        <button class="pw-btn" id="secret-pw-btn" style="font-size:0.9rem;padding:0.75rem 1.5rem;">Reveal ✨</button>
+        <div class="pw-error" id="secret-pw-err">Not quite right! 💕</div>
+      </div>
+      <div id="secret-content" class="secret-content">
+        <p class="secret-msg">💌 Jharna, every word on this page was written for you. Our story is my favourite story — and I hope it never ends. With love, Raj 💕</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/secret.js"></script>
+</body>
+</html>

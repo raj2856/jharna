@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music – Raj ♥ Jharna</title>
+  <meta name="description" content="Our romantic playlist — songs that remind us of each other." />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/music.css" />
+</head>
+<body>
+  <div class="floating-hearts"></div>
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/rj-logo.png" alt="RJ Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="story.html">📖 Story</a></li>
+      <li><a href="gallery.html">🖼️ Gallery</a></li>
+      <li><a href="timeline.html">📅 Timeline</a></li>
+      <li><a href="quiz.html">💡 Quiz</a></li>
+      <li><a href="letters.html">✉️ Letters</a></li>
+      <li><a href="guestbook.html">📝 Guestbook</a></li>
+      <li><a href="music.html" class="active">🎵 Music</a></li>
+      <li><a href="map.html">📍 Map</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">🏠 Home</a><a href="story.html">📖 Our Story</a>
+    <a href="gallery.html">🖼️ Gallery</a><a href="timeline.html">📅 Timeline</a>
+    <a href="quiz.html">💡 Quiz</a><a href="letters.html">✉️ Letters</a>
+    <a href="guestbook.html">📝 Guestbook</a><a href="music.html">🎵 Music</a><a href="map.html">📍 Map</a>
+  </div>
+
+  <div class="page-wrapper">
+    <section class="music-hero">
+      <h1 class="fade-in">Our Playlist</h1>
+      <p class="fade-in">Songs that carry our feelings 🎵</p>
+    </section>
+
+    <div class="music-container">
+
+
+      <!-- Now playing card -->
+      <div class="now-playing-card fade-in">
+        <div class="album-art" id="album-art">
+          <span id="album-icon">🎵</span>
+        </div>
+        <div class="song-title" id="song-title">Perfect</div>
+        <div class="song-artist" id="song-artist">Ed Sheeran</div>
+
+        <!-- Progress -->
+        <div class="music-progress-wrap">
+          <input type="range" class="music-progress" id="progress" value="0" min="0" max="100" />
+          <div class="music-time">
+            <span id="current-time">0:00</span>
+            <span id="duration-time">4:23</span>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="music-controls">
+          <button class="ctrl-btn" id="prev-btn" title="Previous">⏮</button>
+          <button class="play-btn" id="play-btn" title="Play/Pause">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <button class="ctrl-btn" id="next-btn" title="Next">⏭</button>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-wrap">
+          <span>🔈</span>
+          <input type="range" class="volume" id="volume" min="0" max="100" value="70" />
+          <span>🔊</span>
+        </div>
+      </div>
+
+      <!-- YouTube Player (hidden) -->
+      <div id="yt-player" style="display:none"></div>
+
+      <!-- Playlist -->
+      <div id="playlist" class="playlist"></div>
+
+      <!-- Add Music Form -->
+      <div class="add-music-card fade-in">
+        <h3>➕ Add Your Favorite Music</h3>
+        <p style="font-size:0.8rem;color:#a07080;margin-bottom:1rem">Add a YouTube link or a direct MP3 link to your playlist! 💖</p>
+        <div class="add-music-form">
+          <input type="text" id="new-title" placeholder="Song Title (e.g. Our Song)" />
+          <input type="text" id="new-artist" placeholder="Artist" />
+          <input type="text" id="new-url" placeholder="YouTube or MP3 Link..." />
+          <button id="add-song-btn" class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem">Add to Playlist ✨</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>Made with <span>♥</span> for Raj & Jharna 🌸</footer>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/music.js"></script>
+</body>
+</html>

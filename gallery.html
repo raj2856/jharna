@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – Raj ♥ Jharna</title>
+  <meta name="description" content="Photo gallery of our beautiful memories." />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+  <div class="floating-hearts"></div>
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/rj-logo.png" alt="RJ Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="story.html">📖 Story</a></li>
+      <li><a href="gallery.html" class="active">🖼️ Gallery</a></li>
+      <li><a href="timeline.html">📅 Timeline</a></li>
+      <li><a href="quiz.html">💡 Quiz</a></li>
+      <li><a href="letters.html">✉️ Letters</a></li>
+      <li><a href="guestbook.html">📝 Guestbook</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="map.html">📍 Map</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">🏠 Home</a><a href="story.html">📖 Our Story</a>
+    <a href="gallery.html">🖼️ Gallery</a><a href="timeline.html">📅 Timeline</a>
+    <a href="quiz.html">💡 Quiz</a><a href="letters.html">✉️ Letters</a>
+    <a href="guestbook.html">📝 Guestbook</a><a href="music.html">🎵 Music</a><a href="map.html">📍 Map</a>
+  </div>
+
+  <div class="page-wrapper">
+    <section class="gallery-hero">
+      <h1 class="fade-in">Our Gallery</h1>
+      <p class="fade-in">Every picture tells a piece of our story 📸</p>
+    </section>
+
+    <div class="gallery-container">
+      <div class="photo-grid" id="photo-grid">
+        <!-- Photos injected by JS -->
+      </div>
+    </div>
+
+    <footer>Made with <span>♥</span> for Raj & Jharna 🌸</footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lb-close">✕</button>
+      <button class="lightbox-nav lightbox-prev" id="lb-prev">‹</button>
+      <img class="lightbox-img" id="lb-img" src="" alt="" />
+      <button class="lightbox-nav lightbox-next" id="lb-next">›</button>
+      <div class="lightbox-caption" id="lb-caption"></div>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    const photos = [
+      { src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80', caption: '✨ A random moment that became a memory' },
+      { src: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=600&q=80', caption: '💕 A smile I will never forget' },
+      { src: 'https://images.unsplash.com/photo-1543878705-e85eb86ca3d8?auto=format&fit=crop&w=600&q=80', caption: '🌸 A peaceful moment together' },
+      { src: 'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=600&q=80', caption: '☕ Coffee and long conversations' },
+      { src: 'https://images.unsplash.com/photo-1501901609772-df0848060b33?auto=format&fit=crop&w=600&q=80', caption: '🌅 Our kind of evening' },
+      { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80', caption: '💖 A memory worth keeping forever' },
+      { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80', caption: '🏔️ Dreaming of adventures together' },
+    ];
+
+    let currentLb = 0;
+
+    const grid = document.getElementById('photo-grid');
+    photos.forEach((p, i) => {
+      const item = document.createElement('div');
+      item.className = 'photo-item fade-in';
+      item.innerHTML = `
+        <img src="${p.src}" alt="${p.caption}" loading="lazy" />
+        <div class="photo-overlay"><p class="photo-caption">${p.caption}</p></div>
+      `;
+      item.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(item);
+    });
+
+    function openLightbox(idx) {
+      currentLb = idx;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function updateLightbox() {
+      document.getElementById('lb-img').src = photos[currentLb].src;
+      document.getElementById('lb-caption').textContent = photos[currentLb].caption;
+    }
+    document.getElementById('lb-close').addEventListener('click', () => {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('lightbox')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.getElementById('lb-prev').addEventListener('click', () => {
+      currentLb = (currentLb - 1 + photos.length) % photos.length;
+      updateLightbox();
+    });
+    document.getElementById('lb-next').addEventListener('click', () => {
+      currentLb = (currentLb + 1) % photos.length;
+      updateLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') { currentLb = (currentLb-1+photos.length)%photos.length; updateLightbox(); }
+      if (e.key === 'ArrowRight') { currentLb = (currentLb+1)%photos.length; updateLightbox(); }
+      if (e.key === 'Escape') { lb.classList.remove('active'); document.body.style.overflow=''; }
+    });
+  </script>
+</body>
+</html>

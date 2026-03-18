@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guestbook – Raj ♥ Jharna</title>
+  <meta name="description" content="Leave a message in our guestbook." />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/guestbook.css" />
+</head>
+<body>
+  <div class="floating-hearts"></div>
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/rj-logo.png" alt="RJ Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="story.html">📖 Story</a></li>
+      <li><a href="gallery.html">🖼️ Gallery</a></li>
+      <li><a href="timeline.html">📅 Timeline</a></li>
+      <li><a href="quiz.html">💡 Quiz</a></li>
+      <li><a href="letters.html">✉️ Letters</a></li>
+      <li><a href="guestbook.html" class="active">📝 Guestbook</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="map.html">📍 Map</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">🏠 Home</a><a href="story.html">📖 Our Story</a>
+    <a href="gallery.html">🖼️ Gallery</a><a href="timeline.html">📅 Timeline</a>
+    <a href="quiz.html">💡 Quiz</a><a href="letters.html">✉️ Letters</a>
+    <a href="guestbook.html">📝 Guestbook</a><a href="music.html">🎵 Music</a><a href="map.html">📍 Map</a>
+  </div>
+
+  <div class="page-wrapper">
+    <section class="guestbook-hero">
+      <h1 class="fade-in">Guestbook</h1>
+      <p class="fade-in">Leave a little message for us to read and smile 💕</p>
+    </section>
+
+    <div class="guestbook-container">
+      <!-- Write message form -->
+      <div class="gb-form-card fade-in">
+        <h3>📝 Leave a Message</h3>
+        <form id="gb-form">
+          <input type="text" id="gb-name" placeholder="Your name..." maxlength="50" required />
+          <textarea id="gb-msg" placeholder="Write a sweet message here... 💌" required></textarea>
+          <button type="submit" class="btn-primary">Post Message 💬</button>
+        </form>
+      </div>
+
+      <!-- Messages header -->
+      <div class="section-header" style="margin-bottom:1.5rem">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;background:linear-gradient(135deg,#ff9a9e,#ff6b81);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+          Messages
+        </h2>
+      </div>
+
+      <div id="gb-empty" class="empty-state" style="display:none;text-align:center;padding:3rem;color:#c09aaa">
+        <span style="font-size:4rem;display:block;margin-bottom:1rem">💬</span>
+        <p style="font-family:'Playfair Display',serif;font-style:italic">No messages yet. Be the first to leave one! 🌸</p>
+      </div>
+
+      <div id="gb-messages" class="gb-messages"></div>
+    </div>
+
+    <footer>Made with <span>♥</span> for Raj & Jharna 🌸</footer>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/guestbook.js"></script>
+</body>
+</html>
