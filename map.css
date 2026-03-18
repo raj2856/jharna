@@ -1,0 +1,111 @@
+/* MAP PAGE */
+.map-hero {
+  background: linear-gradient(145deg, #fff0f3, #fde8ef, #ffd6e0);
+  padding: 5rem 2rem 3rem; text-align: center;
+}
+.map-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  background: linear-gradient(135deg, #ff9a9e, #ff6b81);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.5rem;
+}
+.map-hero p { color: #a07080; font-size: 1rem; }
+
+.map-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.map-info-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.location-card {
+  flex: 1;
+  min-width: 240px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,154,158,0.3);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 24px rgba(255,107,129,0.12);
+  transition: transform 0.3s;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.location-card:hover { transform: translateY(-4px); }
+
+.loc-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.loc-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #5a2535;
+  margin-bottom: 0.2rem;
+}
+.loc-info p { font-size: 0.85rem; color: #a07080; }
+.loc-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255,154,158,0.25), rgba(250,208,196,0.25));
+  border: 1px solid rgba(255,154,158,0.4);
+  color: #ff6b81;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+
+.distance-card {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,154,158,0.3);
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  min-width: 140px;
+  box-shadow: 0 6px 24px rgba(255,107,129,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.distance-card .dist-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff9a9e, #ff6b81);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.distance-card .dist-label { font-size: 0.75rem; color: #c09aaa; }
+
+/* Map wrapper */
+.map-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(255,107,129,0.2);
+  border: 3px solid rgba(255,154,158,0.3);
+  height: 500px;
+}
+.map-wrapper iframe {
+  width: 100%; height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .map-wrapper { height: 360px; }
+  .map-info-row { flex-direction: column; }
+  .location-card, .distance-card { min-width: unset; }
+}

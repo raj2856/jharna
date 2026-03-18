@@ -1,0 +1,165 @@
+/* LETTERS PAGE */
+.letters-pw-overlay {
+  position: fixed; inset: 0;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: opacity 0.6s ease;
+}
+.letters-pw-overlay.hidden { opacity: 0; pointer-events: none; }
+
+.letters-pw-card {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,154,158,0.4);
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+  width: min(90vw, 440px);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255,107,129,0.25);
+  animation: cardIn 0.8s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes cardIn { from { opacity:0; transform: scale(0.85); } to { opacity:1; transform: scale(1); } }
+
+.letters-pw-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #4a2030;
+  margin-bottom: 0.5rem;
+}
+.letters-pw-card p { color: #a07080; font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+.letters-hero {
+  background: linear-gradient(145deg, #fff0f3, #fde8ef, #ffd6e0);
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+.letters-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  background: linear-gradient(135deg, #ff9a9e, #ff6b81);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.5rem;
+}
+.letters-hero p { color: #a07080; font-size: 1rem; }
+
+.letters-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Write form */
+.letter-form-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,154,158,0.3);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 30px rgba(255,107,129,0.12);
+}
+.letter-form-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #5a2535;
+  margin-bottom: 1.5rem;
+}
+.letter-form-card input,
+.letter-form-card textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid rgba(255,154,158,0.3);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.8);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  color: #4a2030;
+  outline: none;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+.letter-form-card input:focus,
+.letter-form-card textarea:focus {
+  border-color: #ff8fab;
+  box-shadow: 0 0 0 4px rgba(255,139,171,0.12);
+}
+.letter-form-card textarea { min-height: 140px; }
+
+/* Letters list */
+.letters-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.letter-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,154,158,0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(255,107,129,0.1);
+  position: relative;
+  transition: all 0.3s;
+}
+.letter-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,107,129,0.18);
+}
+.letter-card::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: rgba(255,154,158,0.15);
+  position: absolute;
+  top: -10px; left: 15px;
+  line-height: 1;
+  pointer-events: none;
+}
+.letter-from {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff8fab;
+  margin-bottom: 0.5rem;
+}
+.letter-date { font-size: 0.75rem; color: #c09aaa; }
+.letter-subject {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #5a2535;
+  margin-bottom: 0.6rem;
+}
+.letter-body {
+  color: #7a4050;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.letter-delete {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(255,107,129,0.1);
+  border: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ff8fab;
+  font-size: 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.letter-delete:hover { background: #ff6b81; color: #fff; }
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #c09aaa;
+}
+.empty-state .empty-icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
+.empty-state p { font-family: 'Playfair Display', serif; font-style: italic; }
+
+@media (max-width: 600px) {
+  .letter-form-card { padding: 1.5rem; }
+}
